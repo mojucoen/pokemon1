@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <script class="result_tamlplate" type="text/x-handlebars-template">
+
+            <img id="profile-pic" src=" {{data.picture.large}}  ">
+            <div class="user-info">
+                <div>{{data.name.first}} {{data.name.last}}</div>
+                <div>{{data.location.city}} {{data.location.state}}</div>
+
+            </div>
+
+
+        </script>
+
+        <div class="user-container"></div>
+
+
+
+        <div class="quote-container"></div>
+        <script class="pokemon_tamlplate" type="text/x-handlebars-template">
+            <div class="pokemon-container">
+
+
+                <div> <img id="pokemon-image" src=" {{word1.sprites.front_default}}  "></div>
+
+                <div id="pokemon-text">{{word2.name}} </div>
+
+
+            </div>
+
+        </script>
+
+        <script class="about_tamlplate" type="text/x-handlebars-template">
+            <div class="quote-containerp">about me</div>
+            <div class="meat-text">{{word}} </div>
+
+        </script>
+        <div class="content-container"> </div>
+
+        <script class="friends_tamlplate" type="text/x-handlebars-template">
+
+            {{#each data}}
+
+            <div id="user-info">{{name.first}} {{name.last}}</div>
+            {{/each}}
+        </script>
+        <div class="friends">
+
+            <h4>Friends</h4>
+            <div class="friends-container">
+            </div>
+        </div>
+        <div class="buttons">
+            <button>Load User Data</button>
+            <button>Display User</button>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
